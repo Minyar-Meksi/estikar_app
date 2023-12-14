@@ -1,7 +1,6 @@
-import 'package:estikar_app/screens/signin.dart';
-import 'package:estikar_app/screens/signup.dart';
+
 import 'package:estikar_app/screens/splash.dart';
-import 'package:estikar_app/screens/welcome.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:SignUp() ,
+      home:SplashScreen() ,
     );
   }
 }

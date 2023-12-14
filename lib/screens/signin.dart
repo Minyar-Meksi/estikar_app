@@ -1,4 +1,6 @@
 import 'package:estikar_app/const/colors.dart';
+import 'package:estikar_app/screens/quickQuiz.dart';
+import 'package:estikar_app/screens/signup.dart';
 import 'package:estikar_app/widgets/buttonOrg.dart';
 import 'package:estikar_app/widgets/inputText.dart';
 import 'package:estikar_app/widgets/logo.dart';
@@ -47,12 +49,12 @@ class _SignInState extends State<SignIn> {
             SizedBox(
               height: 60,
             ),
-            Input_box(
+            InputBox(
                 label: 'Username', iconData: CupertinoIcons.profile_circled),
             const SizedBox(
               height: 20,
             ),
-            const Input_box(
+            const InputBox(
               label: "Password",
               iconData: CupertinoIcons.lock_fill,
             ),
@@ -76,11 +78,15 @@ class _SignInState extends State<SignIn> {
               height: 80,
             ),
             InkWell(
-               onTap: () {
-                    // Handle the tap action here
-                  },
-              child: ButtonOrg(btnText: "Login")),
-              SizedBox(height: 100,),
+                onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const QuickQuiz(),
+                      ),
+                    ),
+                child: ButtonOrg(btnText: "Login")),
+            SizedBox(
+              height: 100,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -93,9 +99,12 @@ class _SignInState extends State<SignIn> {
                       fontWeight: FontWeight.w500),
                 ),
                 InkWell(
-                  onTap: () {
-                    // Handle the tap action here
-                  },
+                  onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const SignUp(),
+                      ),
+                    ),
+              
                   child: Text("Sign Up ",
                       style: TextStyle(
                           color: AppColors.orange,

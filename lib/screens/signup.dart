@@ -1,4 +1,5 @@
 import 'package:estikar_app/const/colors.dart';
+import 'package:estikar_app/screens/quickQuiz.dart';
 import 'package:estikar_app/widgets/buttonOrg.dart';
 import 'package:estikar_app/widgets/inputText.dart';
 import 'package:estikar_app/widgets/logo.dart';
@@ -46,33 +47,42 @@ class SignUp extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            const Input_box(
+            const InputBox(
                 label: 'Username', iconData: CupertinoIcons.profile_circled),
             const SizedBox(
               height: 20,
             ),
-            const Input_box(
+            const InputBox(
               label: "Email",
               iconData: CupertinoIcons.mail,
             ),
             const SizedBox(
               height: 20,
             ),
-            const Input_box(
+            const InputBox(
               label: "Password",
               iconData: CupertinoIcons.lock_fill,
             ),
             const SizedBox(
               height: 30,
             ),
-            ButtonOrg(btnText: 'Sign Up',),
+            InkWell(
+              
+              onTap:  () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const QuickQuiz(),
+                      ),
+                    ),
+              child: ButtonOrg(btnText: 'Sign Up',)),
             SizedBox(
               height: 20,
             ),
             InkWell(
-                onTap: () {
-                  // Handle the tap action here
-                },
+                onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const QuickQuiz(),
+                      ),
+                    ),
                 child: Text(
                   "Proceed as a Guest",
                   style: TextStyle(

@@ -1,4 +1,5 @@
 import 'package:estikar_app/const/colors.dart';
+import 'package:estikar_app/screens/signup.dart';
 import 'package:estikar_app/widgets/logo.dart';
 import 'package:flutter/material.dart';
 
@@ -41,9 +42,11 @@ class Welcome extends StatelessWidget {
                 height: 35,
               ),
               InkWell(
-                 onTap: () {
-              // Handle the tap action here
-            },
+                 onTap: () => Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const SignUp(),
+                      ),
+                    ),
                 child: Container(
                   alignment: Alignment.center,
                   height: 64,

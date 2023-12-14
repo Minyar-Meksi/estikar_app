@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 
 class ButtonOrg extends StatelessWidget {
   const ButtonOrg({
-    super.key, required this.btnText,
-  });
-   final String btnText ;
+    Key? key,
+    required this.btnText,
+  }) : super(key: key);
+
+  final String btnText;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,15 +16,17 @@ class ButtonOrg extends StatelessWidget {
       height: 60,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: AppColors.orange),
-      child: const Text(
-        "Sign Up",
+        borderRadius: BorderRadius.circular(10),
+        color: AppColors.orange,
+      ),
+      child: Text(
+        btnText,
         style: TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-            fontFamily: "poppins"),
+          color: Colors.white,
+          fontSize: 18,
+          fontWeight: FontWeight.w600,
+          fontFamily: "poppins",
+        ),
       ),
     );
   }
